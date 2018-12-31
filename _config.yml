@@ -23,7 +23,7 @@ twitter_username: null
 github_username:  wenguang-liu
 
 markdown: kramdown
-theme: jekyll-theme-hacker
+theme: minima
 plugins:
   - jekyll-feed
 
