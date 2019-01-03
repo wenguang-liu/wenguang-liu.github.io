@@ -50,5 +50,4 @@ tags:
 ## 更多请参考
 1. [分布式哈希表-算法角度描述](/asserts/DistributedHashTable.pdf)
 2. [分布式哈希表-算法角度描述-PPT](/asserts/DistributedHashTablePPT.pdf)
-
-
+3. [Distributed K-ary System-Algorithms for Distributed Hash Tables](/asserts/Distributed_K-ary_System-Algorithms_for_Distributed_Hash_Tables.pdf)
