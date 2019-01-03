@@ -48,7 +48,7 @@ tags:
 分布式哈希表必须具备以下特性：动态可拓展，数据具被分散性，系统自管理。简单地说就是能够动态扩展节点，每个节点上的数据尽量分散，系统能够自动容错等。
 
 ## 更多请参考
-1. [分布式哈希表-算法角度描述](/asserts/分布式哈希表-DistributedHashTable.pdf)
-2. [分布式哈希表-PPT](/asserts/DistributedHashTable-PPT.pdf)
+1. [分布式哈希表-算法角度描述](/asserts/DistributedHashTable.pdf)
+2. [分布式哈希表-算法角度描述-PPT](/asserts/DistributedHashTablePPT.pdf)
 
 
