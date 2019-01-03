@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      
-subtitle:   iOS定时器详解
+title:      分布式哈希表（Distributed Hash Table，DHT）
+subtitle:   算法视角(In Algorithm Perspective)
 date:       2018-12-29
 author:     Wenguangliu
 header-img: img/post-bg-ios9-web.jpg
