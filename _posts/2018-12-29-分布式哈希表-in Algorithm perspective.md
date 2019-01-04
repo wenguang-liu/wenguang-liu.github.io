@@ -44,10 +44,8 @@ tags:
 6.4 其他应用场景  
 7. 总结   
 
-分布式哈希表，即提供Key/Value的存储服务。最基础的两个接口就是PUT(Key,Value)和GET(Key)，即将数据保存到DHT和从DHT中读取某个特定的Key对应的Value值。  
-分布式哈希表必须具备以下特性：动态可拓展，数据具被分散性，系统自管理。简单地说就是能够动态扩展节点，每个节点上的数据尽量分散，系统能够自动容错等。
 
-## 更多请参考
+## 完整内容请阅读
 1. [分布式哈希表-算法角度描述](/asserts/DistributedHashTable.pdf)
 2. [分布式哈希表-算法角度描述-PPT](/asserts/DistributedHashTablePPT.pdf)
-3. [Distributed K-ary System-Algorithms for Distributed Hash Tables](/asserts/Distributed_K-ary_System-Algorithms_for_Distributed_Hash_Tables.pdf)
+3. 原始论文：[Distributed K-ary System-Algorithms for Distributed Hash Tables](/asserts/Distributed_K-ary_System-Algorithms_for_Distributed_Hash_Tables.pdf)
