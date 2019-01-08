@@ -58,19 +58,17 @@ ALGORITHM是用表示执行DDL的算法；其中，LOCK语句是用来控制DML/
 
 下面是一个简单例子说明这种情况。  
 会话1:  
-
-(```)
+```
 	CREATE TABLE t1 (c1 INT) ENGINE=InnoDB;   
 	START TRANSACTION;   
 	SELECT * FROM t1;   
-(```)
-
+```
 创建表t1，并开始一个事务，但不提交。此时，该事务会占据表t1元数据的共享锁；  
 会话2:  
-`	ALTER TABLE t1 ADD COLUMN x INT, ALGORITHM=INPLACE, LOCK=NONE;`   
-执行DDL语句，此语句因为抢占不到表t1的元数据锁而阻塞，一直等待排他锁；  
+`	ALTER TABLE t1 ADD COLUMN x INT, ALGORITHM=INPLACE, LOCK=NONE;`    
+执行DDL语句，此语句因为抢占不到表t1的元数据锁而阻塞，一直等待排他锁；   
 会话3:   
-`   SELECT * FROM t1;  `
+`   SELECT * FROM t1;`   
 执行一个DQL语句，因为会话2在等待表t1的排他锁，所以会话3因为没有办法占据共享锁而阻塞。  
 
 
