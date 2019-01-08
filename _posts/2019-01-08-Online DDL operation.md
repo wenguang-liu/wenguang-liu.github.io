@@ -2,7 +2,7 @@
 layout:     post
 title:      在线DDL操作(Online DDL)
 subtitle:   InnoDB的在线操作类型
-date:       2019-01-07
+date:       2019-01-08
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
 catalog: 	 true

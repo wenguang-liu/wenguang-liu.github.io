@@ -78,4 +78,4 @@ ALGORITHM是用表示执行DDL的算法；其中，LOCK语句是用来控制DML/
 
 其他请参阅：   
 [Online DDL operation](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl.html)  
-[在线DDL操作](https://wenguang-liu.github.io/2019/01/07/Online-DDL-operation)    
+[在线DDL操作](https://wenguang-liu.github.io/2019/01/08/Online-DDL-operation)    
