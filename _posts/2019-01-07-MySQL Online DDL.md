@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      MySQL在线Schema变更(Online DDL)
-subtitle:   iOS定时器详解
+title:      MySQL在线DDL变更
+subtitle:   InnoDB引擎的Online DDL
 date:       2019-01-07
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
@@ -10,7 +10,7 @@ tags:
     - DDL
     - MySQL
     - Schema
-    - 算法
+    - Online
     - InnoDB
 ---
 
@@ -76,6 +76,6 @@ ALGORITHM是用表示执行DDL的算法；其中，LOCK语句是用来控制DML/
 ```
 执行一个DQL语句，因为会话2在等待表t1的排他锁，所以会话3因为没有办法占据共享锁而阻塞。  
 
-
-
-
+其他请参阅：   
+[Online DDL operation](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl.html)  
+[在线DDL操作](https://wenguang-liu.github.io/2019/01/07/Online-DDL-operation)    
