@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      在线DDL操作(Online DDL)
+title:      在线DDL操作(Online DDL Operation)
 subtitle:   InnoDB的在线操作类型
 date:       2019-01-08
 author:     Wenguangliu
