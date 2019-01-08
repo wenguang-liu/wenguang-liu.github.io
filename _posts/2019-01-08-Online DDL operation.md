@@ -33,7 +33,7 @@ tags:
 本小节将介绍5.6开始支持的与索引相关Online DDL操作在执行时的行为和状态。  
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
----|:---|:---|:---|:---|:--------
+:---|:---|:---|:---|:---|:--------
 Creating or adding a secondary index|Yes|No|Yes|No|创建的二级索引包含在创建index结束之前提交的数据，不包含未提交的数据，旧版本的数据，被标记为删除但未从旧索引删除的数据
 Dropping an index|Yes|No|Yes|Yes|只有在所有访问该表的事务都结束后才会结束删除索引，即索引的初始状态是表的最近状态。
 Renaming an index|Yes|No|Yes|Yes|只修改元数据而不触及数据
@@ -45,7 +45,7 @@ Changing the index type|Yes|No|Yes|Yes|修改索引类型，USING BTREE/HASH，�
 本小节介绍与主键相关操作在在线DDL时的行为和状态。   
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
----|:---|:---|:---|:---|:--------
+:---|:---|:---|:---|:---|:--------
 Adding a primary key|Yes*|Yes*|Yes|No|新增主键，需要重建数据表（根据聚集索引重排），如果有列必须要转成NOT NULL，那么不允许INPLACE
 Dropping a primary key|No|Yes|No|No|在删除主键而不增加新主键时，只有COPY方式才能被使用
 Dropping a primary key and adding another|Yes|Yes|Yes|No|删除主键和增加新的主键
@@ -63,7 +63,7 @@ Dropping a primary key and adding another|Yes|Yes|Yes|No|删除主键和增加�
 本小节主要介绍列操作相关的在线DDL行为。    
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
----|:---|:---|:---|:---|:--------
+:---|:---|:---|:---|:---|:--------
 Adding a column|Yes|Yes|Yes*|No|当增加的是auto-increment的列时，并发DML不允许。因为是行存储，需要重建数据表。最低要求为ALGORITHM=INPLACE和LOCK=SHARED
 Dropping a column|Yes|Yes|Yes|No|需要重组数据
 Renaming a column|Yes|No|Yes*|Yes|允许并发DML，使用数据类型且只修改列名。当重命名被作为外键的列时候，只能够使用INPLACE
@@ -80,7 +80,7 @@ Modifying the definition of an ENUM or SET column|Yes|No|Yes|Yes|在增加枚举
 本小节简单介绍与外键操作相关的在线DDL执行的行为和状态。   
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
----|:---|:---|:---|:---|:--------
+:---|:---|:---|:---|:---|:--------
 Adding a foreign key constraint|Yes*|No|Yes|Yes|当foreign_key_checks被禁用时，可以用INPLACE；否则只能COPY
 Dropping a foreign key constraint|Yes|No|Yes|Yes|同上
 
@@ -88,7 +88,7 @@ Dropping a foreign key constraint|Yes|No|Yes|Yes|同上
 本小节简单介绍与表操作相关的在线DDL执行的行为和状态。   
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
----|:---|:---|:---|:---|:--------
+:---|:---|:---|:---|:---|:--------
 Changing the ROW_FORMAT|Yes|Yes|Yes|No|修改表的行格式，将会重建数据表
 Changing the KEY_BLOCK_SIZE|Yes|Yes|Yes|No|修改表的键块的大小，将会重建数据表
 Setting persistent table statistics|Yes|No|Yes|Yes|只修改表的元数据
