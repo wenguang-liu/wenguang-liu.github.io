@@ -35,20 +35,20 @@ tags:
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
 Creating or adding a secondary index|Yes|No|Yes|No|创建的二级索引包含在创建index结束之前提交的数据，不包含未提交的数据，旧版本的数据，被标记为删除但未从旧索引删除的数据
-Dropping an index | Yes | No | Yes | Yes | 只有在所有访问该表的事务都结束后才会结束删除索引，即索引的初始状态是表的最近状态。
-Renaming an index| Yes | No | Yes | Yes | 只修改元数据而不触及数据
-Adding a FULLTEXT index | Yes* | No* | No | No | 如果没有用户定义的FTS_DOC_ID列，则需要重建表；其他的不需要重建表
-Adding a SPATIAL index | Yes | No | No | No | 与FULLTEXT相同。 
-Changing the index type | Yes | No | Yes | Yes | 修改索引类型，USING BTREE | HASH，与重建索引类似。 
+Dropping an index|Yes|No|Yes|Yes|只有在所有访问该表的事务都结束后才会结束删除索引，即索引的初始状态是表的最近状态。
+Renaming an index|Yes|No|Yes|Yes|只修改元数据而不触及数据
+Adding a FULLTEXT index|Yes*|No*|No|No|如果没有用户定义的FTS_DOC_ID列，则需要重建表；其他的不需要重建表
+Adding a SPATIAL index|Yes|No|No|No|与FULLTEXT相同。 
+Changing the index type|Yes|No|Yes|Yes|修改索引类型，USING BTREE/HASH，与重建索引类似。 
 
 ## 3. 主键操作  
 本小节介绍与主键相关操作在在线DDL时的行为和状态。   
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
-Adding a primary key | Yes* | Yes* | Yes | No | 新增主键，需要重建数据表（根据聚集索引重排），如果有列必须要转成NOT NULL，那么不允许INPLACE
-Dropping a primary key | No | Yes | No | No | 在删除主键而不增加新主键时，只有COPY方式才能被使用
-Dropping a primary key and adding another | Yes | Yes | Yes | No | 删除主键和增加新的主键
+Adding a primary key|Yes*|Yes*|Yes|No|新增主键，需要重建数据表（根据聚集索引重排），如果有列必须要转成NOT NULL，那么不允许INPLACE
+Dropping a primary key|No|Yes|No|No|在删除主键而不增加新主键时，只有COPY方式才能被使用
+Dropping a primary key and adding another|Yes|Yes|Yes|No|删除主键和增加新的主键
 
 注：   
 1）新增主键： 当新建UNIQUE和PK时，MySQL需要做重复值检查，对于PK，还需要检查不包含NULL值。  
@@ -64,40 +64,40 @@ Dropping a primary key and adding another | Yes | Yes | Yes | No | 删除主键�
 
 操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
-Adding a column | Yes | Yes | Yes* | No | 当增加的是auto-increment的列时，并发DML不允许。因为是行存储，需要重建数据表。最低要求为ALGORITHM=INPLACE和LOCK=SHARED
-Dropping a column | Yes | Yes | Yes | No | 需要重组数据
-Renaming a column | Yes | No | Yes* | Yes | 允许并发DML，使用数据类型且只修改列名。当重命名被作为外键的列时候，只能够使用INPLACE
-Reordering columns | Yes | Yes | Yes | No | 需要重组数据
-Setting a column default value | Yes | No | Yes | Yes | 只修改元数据，元数据存在.frm文件中
-Changing the column data type | No | Yes | No | No | 只能够使用ALGORITHM=COPY，为了进行数据转换
-Dropping the column default value | Yes | No | Yes | Yes | 修改元数据
-Changing the auto-increment value | Yes | No | Yes | No* | 修改一个存在内存中的值
-Making a column NULL | Yes | Yes* | Yes | No | rebuild数据表
-Making a column NOT NULL | Yes* | Yes* | Yes | No | 重建数据表INPLACE，需要设置：STRICT_ALL_TABLES or STRICT_TRANS_TABLES SQL_MODE，如果包含NULL值，将会失败
-Modifying the definition of an ENUM or SET column | Yes | No | Yes | Yes | 在增加枚举值时，应该将新值加在最后，这是可以是INPLACE。但是当存储大小变化时，例如在有8个枚举值的新增一个，需要COPY。在枚举中间增加一个值也需要COPY
+Adding a column|Yes|Yes|Yes*|No|当增加的是auto-increment的列时，并发DML不允许。因为是行存储，需要重建数据表。最低要求为ALGORITHM=INPLACE和LOCK=SHARED
+Dropping a column|Yes|Yes|Yes|No|需要重组数据
+Renaming a column|Yes|No|Yes*|Yes|允许并发DML，使用数据类型且只修改列名。当重命名被作为外键的列时候，只能够使用INPLACE
+Reordering columns|Yes|Yes|Yes|No|需要重组数据
+Setting a column default value|Yes|No|Yes|Yes|只修改元数据，元数据存在.frm文件中
+Changing the column data type|No|Yes|No|No|只能够使用ALGORITHM=COPY，为了进行数据转换
+Dropping the column default value|Yes|No|Yes|Yes|修改元数据
+Changing the auto-increment value|Yes|No|Yes|No*|修改一个存在内存中的值
+Making a column NULL|Yes|Yes*|Yes|No|rebuild数据表
+Making a column NOT NULL|Yes*|Yes*|Yes|No|重建数据表INPLACE，需要设置：STRICT_ALL_TABLES or STRICT_TRANS_TABLES SQL_MODE，如果包含NULL值，将会失败
+Modifying the definition of an ENUM or SET column|Yes|No|Yes|Yes|在增加枚举值时，应该将新值加在最后，这是可以是INPLACE。但是当存储大小变化时，例如在有8个枚举值的新增一个，需要COPY。在枚举中间增加一个值也需要COPY
 
 ## 5. 外键操作
 本小节简单介绍与外键操作相关的在线DDL执行的行为和状态。   
 
  操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
-Adding a foreign key constraint | Yes* |  | Yes | Yes | 当foreign_key_checks被禁用时，可以用INPLACE；否则只能COPY
-Dropping a foreign key constraint | Yes |  | Yes | Yes | 同上
+Adding a foreign key constraint|Yes*||Yes|Yes|当foreign_key_checks被禁用时，可以用INPLACE；否则只能COPY
+Dropping a foreign key constraint|Yes||Yes|Yes|同上
 
 ## 6. 表操作
 本小节简单介绍与表操作相关的在线DDL执行的行为和状态。   
 
  操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
-Changing the ROW_FORMAT | Yes | Yes | Yes | No | 修改表的行格式，将会重建数据表
-Changing the KEY_BLOCK_SIZE | Yes | Yes | Yes | No | 修改表的键块的大小，将会重建数据表
-Setting persistent table statistics | Yes | No | Yes | Yes | 只修改表的元数据
-Specifying a character set | Yes | Yes* | No | No | 将会重建表格
-Converting a character set | No | Yes | No | No | 将会重建表格
-Optimizing a table | Yes* | Yes | Yes | No | 优化表格，使用INPLACE（5.6.17后），但不支持ALGORITHM和LOCK的语法。但是有FULLTEXT索引的表不能够使用INPLACE
-Rebuilding with the FORCE option | Yes* | Yes | Yes | No | 使用INPLACE（5.6.17后）。但是有FULLTEXT索引的表不能够使用INPLACE
-Performing a null rebuild | Yes* | Yes | Yes | No | 同上
-Renaming a table | Yes | No | Yes | Yes | 将会重命名表名，但不COPY
+Changing the ROW_FORMAT|Yes|Yes|Yes|No|修改表的行格式，将会重建数据表
+Changing the KEY_BLOCK_SIZE|Yes|Yes|Yes|No|修改表的键块的大小，将会重建数据表
+Setting persistent table statistics|Yes|No|Yes|Yes|只修改表的元数据
+Specifying a character set|Yes|Yes*|No|No|将会重建表格
+Converting a character set|No|Yes|No|No|将会重建表格
+Optimizing a table|Yes*|Yes|Yes|No|优化表格，使用INPLACE（5.6.17后），但不支持ALGORITHM和LOCK的语法。但是有FULLTEXT索引的表不能够使用INPLACE
+Rebuilding with the FORCE option|Yes*|Yes|Yes|No|使用INPLACE（5.6.17后）。但是有FULLTEXT索引的表不能够使用INPLACE
+Performing a null rebuild|Yes*|Yes|Yes|No|同上
+Renaming a table|Yes|No|Yes|Yes|将会重命名表名，但不COPY
 
 ## 7.总结   
 本文主要介绍与MySQL（5.6后）中InnoDB中支持Online DDL的操作相关内容。其他更多信息可以参阅：   
