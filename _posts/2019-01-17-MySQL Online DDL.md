@@ -10,9 +10,8 @@ tags:
     - DDL
     - MySQL
     - Schema
-    - 在线
-    - Lock
     - 算法
+    - InnoDB
 ---
 
 本文将简单介绍MySQL InnoDB在5.6后的新特性-Online DDL，在后续文章将会有更详细的介绍。
