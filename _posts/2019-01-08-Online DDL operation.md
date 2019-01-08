@@ -81,8 +81,8 @@ Modifying the definition of an ENUM or SET column|Yes|No|Yes|Yes|在增加枚举
 
  操作|INPLACE|重建表|允许并发DML|只改元数据|说明
 ---|:--:|---:|---:|---:|---:
-Adding a foreign key constraint|Yes*||Yes|Yes|当foreign_key_checks被禁用时，可以用INPLACE；否则只能COPY
-Dropping a foreign key constraint|Yes||Yes|Yes|同上
+Adding a foreign key constraint|Yes*|No|Yes|Yes|当foreign_key_checks被禁用时，可以用INPLACE；否则只能COPY
+Dropping a foreign key constraint|Yes|No|Yes|Yes|同上
 
 ## 6. 表操作
 本小节简单介绍与表操作相关的在线DDL执行的行为和状态。   
