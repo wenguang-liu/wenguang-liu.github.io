@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [db]数据库查询查询
+title:      (db)数据库查询查询
 subtitle:   物理查询计划
 date:       2019-01-09
 author:     Wenguangliu

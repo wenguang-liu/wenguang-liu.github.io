@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [mysql]InnoDBL在线DDL(1)
+title:      (mysql)InnoDBL在线DDL(1)
 subtitle:   基本介绍
 date:       2019-01-07
 author:     Wenguangliu

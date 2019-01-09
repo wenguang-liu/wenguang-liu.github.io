@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [mysql]InnoDBL在线DDL(2)
+title:      (mysql)InnoDBL在线DDL(2)
 subtitle:   在线操作Online DDL Operation
 date:       2019-01-08
 author:     Wenguangliu

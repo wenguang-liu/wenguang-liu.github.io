@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      [DHT]分布式哈希表（Distributed Hash Table）
+title:      (DHT)分布式哈希表（Distributed Hash Table）
 subtitle:   算法视角(In Algorithm Perspective)
 date:       2018-12-29
 author:     Wenguangliu
