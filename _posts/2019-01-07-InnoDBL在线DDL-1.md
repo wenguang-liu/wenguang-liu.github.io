@@ -22,7 +22,7 @@ ONLine DDL特性支持了IN-PLACE的表修改和并发DML，有以下好处：
 - 提供可选项，通过在DDL上使用LOCK语句允许在性能和并发上取得平衡；
 - 相对于表COPY方式，更少的磁盘使用率和IO过载；  
 
-在缺省情况下，InnoDB会优先使用IN-PLACE，尽量少的锁进行DDL部署。但用户仍然可以通过在Alter Table使用ALGORITHM和LOCK语句来控制DDL执行，具体语法如：   
+在缺省情况下，InnoDB会优先使用INPLACE，尽量少的锁进行DDL部署。但用户仍然可以通过在Alter Table使用ALGORITHM和LOCK语句来控制DDL执行，具体语法如：   
 ```
  ALTER TABLE tbl_name ADD PRIMARY KEY (column), ALGORITHM=INPLACE, LOCK=NONE;   
 ```
@@ -76,6 +76,8 @@ ALGORITHM是用表示执行DDL的算法；其中，LOCK语句是用来控制DML/
 ```
 执行一个DQL语句，因为会话2在等待表t1的排他锁，所以会话3因为没有办法占据共享锁而阻塞。  
 
+
 其他请参阅：   
-- [在线DDL操作](https://wenguang-liu.github.io/2019/01/08/InnoDBL在线DDL-2)    
+- [InnoDBL在线DDL(2)-在线操作Online DDL Operation](https://wenguang-liu.github.io/2019/01/08/InnoDBL在线DDL-2)    
+- [InnoDBL在线DDL(3)-在线DDL后续](https://wenguang-liu.github.io/2019/01/09/InnoDBL在线DDL-3)    
 - [Online DDL operation（MySQL文档）](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl.html)  

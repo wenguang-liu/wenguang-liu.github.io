@@ -100,7 +100,8 @@ Performing a null rebuild|Yes*|Yes|Yes|No|同上
 Renaming a table|Yes|No|Yes|Yes|将会重命名表名，但不COPY
 
 ## 7.总结   
-本文主要介绍与MySQL（5.6后）中InnoDB中支持Online DDL的操作相关内容。其他更多信息可以参阅：   
-[InnoDB引擎的Online DDL](https://wenguang-liu.github.io/2019/01/07/InnoDBL在线DDL-1/)   
-[Online DDL Operations](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl-operations.html)   
+本文主要介绍与MySQL（5.6后）中InnoDB中支持Online DDL的操作相关内容。其他更多内容可以参阅：   
+- [InnoDBL在线DDL(1)-基本介绍](https://wenguang-liu.github.io/2019/01/07/InnoDBL在线DDL-1)    
+- [InnoDBL在线DDL(3)-在线DDL后续](https://wenguang-liu.github.io/2019/01/09/InnoDBL在线DDL-3)  
+- [Online DDL Operations](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl-operations.html)   
 
