@@ -9,7 +9,6 @@ catalog: 	 true
 tags:
     - DDL
     - MySQL
-    - Schema
     - Online
     - InnoDB
 ---
