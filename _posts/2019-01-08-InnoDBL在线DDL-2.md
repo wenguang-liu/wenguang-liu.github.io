@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      在线DDL操作(Online DDL Operation)
-subtitle:   InnoDB的在线操作类型
+title:      [mysql]InnoDBL在线DDL(2)
+subtitle:   在线操作Online DDL Operation
 date:       2019-01-08
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
@@ -101,6 +101,6 @@ Renaming a table|Yes|No|Yes|Yes|将会重命名表名，但不COPY
 
 ## 7.总结   
 本文主要介绍与MySQL（5.6后）中InnoDB中支持Online DDL的操作相关内容。其他更多信息可以参阅：   
-[InnoDB引擎的Online DDL](https://wenguang-liu.github.io/2019/01/07/MySQL-Online-DDL/)   
+[InnoDB引擎的Online DDL](https://wenguang-liu.github.io/2019/01/07/InnoDBL在线DDL-1/)   
 [Online DDL Operations](https://dev.mysql.com/doc/refman/5.6/en/innodb-online-ddl-operations.html)   
 
