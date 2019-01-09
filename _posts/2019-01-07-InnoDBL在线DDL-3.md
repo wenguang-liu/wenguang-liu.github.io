@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      (mysql)InnoDBL在线DDL(3)
-subtitle:   在线DDL后续
+subtitle:   在线DDL讨论
 date:       2019-01-09
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
