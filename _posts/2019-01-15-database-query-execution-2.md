@@ -22,14 +22,14 @@ tags:
 ### 语法分析树基本概念
 语法分析树的节点可以分成两种：   
 ***1）原子（叶）节点***   
-语法成本（如关键字），关系或属性的名字，常数，括号，运算符，以及其他模式成分。
+语法成本（如关键字），关系或属性的名字，常数，括号，运算符，以及其他模式成分。    
 ***2）语法类节点***   
-在一个查询中起相似作用的查询子成分所形成的族的名称。例如<Query>表示select from where形式的查询；<Condition>是指在wehre之后的表达式；   
-其子节点通常是该语言的语法***规则***之一进行描述。
+在一个查询中起相似作用的查询子成分所形成的族的名称。例如，\<Query\>表示select from where形式的查询；\<Condition\>是指在where之后的表达式；   
+其子节点通常是该语言的语法***规则***之一进行描述。   
 
-### 一个小例子的规则
+### 一个小例子的规则定义
 如select查询语句的一个子集规则：  
-*** 1) 查询***     
+***1) 查询***     
 这条简单的语句只是支持以下的规则，不支持GROUP BY，HAVING等。    
 ```
 <Query> := SELECT <SelList> FROM <FromList> WHERE <Condition>    
@@ -38,21 +38,21 @@ tags:
 - <FromList>：为数据源的列表（From列表）；    
 - <Condition>：为数据过滤的条件；
 
-*** 2）选择列表***    
+***2）选择列表***    
 下面是选择列表的规则，表示选择列表可以是一个属性加上逗号和另一个选择列表；或者就是一个属性。       
 ```
 <SelList> := <Attribute>, <SelList>  
 <SelList> := <Attribute>
 ```
 
-*** 3）From列表***   
+***3）From列表***   
 From列表与选择列表相似，表示可以有单个关系，或者一个关系，逗号和另一个From列表组成。     
 ```
 <FromList> := <Relation>,  <FromList>    
 <FromList> := <Relation>    
 ```
 
-*** 4）条件***
+***4）条件***
 条件的推倒语法如下，即可以是一个条件，AND和另一个条件；单个属性，IN和一个Query；属性，=，属性；属性， Like， Pattern四个推倒语法。   
 ```
 <Condition> := <Condition> AND <Condition>  
@@ -60,8 +60,8 @@ From列表与选择列表相似，表示可以有单个关系，或者一个关�
 <Condition> := <Attribute> = <Attribute>  
 <Condition> := <Attribute> LIKE <Pattern>    
 ```
-*** 5）基本语法类***   
-如上面出现的<Attribute>, <Relation>, <Pattern> 不是通过规则定义的，而是通过代表的原子规则定义的。  
+***5）基本语法类***   
+如上面出现的\<Attribute\>, \<Relation\>, \<Pattern\> 不是通过规则定义的，而是通过代表的原子规则定义的。  
 
 ### 一个例子的语法分析树
 根据以上定义的规则，定义以下两个关系：    
