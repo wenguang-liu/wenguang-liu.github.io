@@ -183,4 +183,5 @@ d）对于包差，R-S，输出t的次数是t在R中出现的次数减去在S中
 本文主要介绍数据库中物理计划执行，介绍了数据量较小的一趟算法，数据量较大的两趟算法和多趟算法，最后介绍了缓冲区管理的策略。  
 
 更多内容请参阅其他文章：
-- [(db)数据库语句执行(2)-语法分析与预处理](https://wenguang-liu.github.io/2019/01/09/database-query-execution-2/)
+- [(db)数据库语句执行(2)-语法分析与预处理](https://wenguang-liu.github.io/2019/01/13/database-query-execution-2/)
+- [(db)数据库语句执行(3)-优化查询计划的代数定律](https://wenguang-liu.github.io/2019/01/15/database-query-execution-3/)
