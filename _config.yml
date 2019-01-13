@@ -4,7 +4,7 @@ SEOTitle: Wenguang Liu's page
 header-img: img/post-bg-rwd.jpg
 email: lotay.liu@hotmail.com
 description: "Studying, Growing, Developing"
-keyword: "Wenguang, Distributed System, Database, MySQL, InnoDB, Index, Hash, Wenguang Liu, lotay, 存储引擎, 文件系统, 对象存储, 数据库, 索引, 分布式系统"
+keyword: "Wenguang, Distributed System, Database, MySQL, InnoDB, Index, Hash, Wenguang Liu, wenguangliu, lotay, 存储引擎, 文件系统, 对象存储, 数据库, 索引, 分布式系统"
 url: "https://wenguang-liu.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
