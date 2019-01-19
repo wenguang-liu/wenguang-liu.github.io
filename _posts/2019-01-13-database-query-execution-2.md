@@ -93,3 +93,4 @@ SELECT movieTitle FROM StarsIn, MovieStar WHERE starName = name AND birthdate LI
 本文主要介绍了语法分析和语句的预处理，更多内容请参阅其他文章：   
 - [(db)数据库语句执行(1)-物理计划执行](https://wenguang-liu.github.io/2019/01/09/database-query-execution-1/)
 - [(db)数据库语句执行(3)-优化查询计划的代数定律](https://wenguang-liu.github.io/2019/01/15/database-query-execution-3/)
+- [(db)数据库语句执行(4)-逻辑查询计划](https://wenguang-liu.github.io/2019/01/19/database-query-execution-4/)

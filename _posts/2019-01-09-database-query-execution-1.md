@@ -185,3 +185,4 @@ d）对于包差，R-S，输出t的次数是t在R中出现的次数减去在S中
 更多内容请参阅其他文章：
 - [(db)数据库语句执行(2)-语法分析与预处理](https://wenguang-liu.github.io/2019/01/13/database-query-execution-2/)
 - [(db)数据库语句执行(3)-优化查询计划的代数定律](https://wenguang-liu.github.io/2019/01/15/database-query-execution-3/)
+- [(db)数据库语句执行(4)-逻辑查询计划](https://wenguang-liu.github.io/2019/01/19/database-query-execution-4/)
