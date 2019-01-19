@@ -26,7 +26,7 @@ tags:
 - 投影πL, L为<SelList>的属性列表；
 
 如下图所示：
-![avatar](/asserts/execution_plan_sample1.png)
+![avatar](/asserts/execution_plan_sample1.png =500x)
 
 对于<Condition>中包含子查询的语法树，可以采用不带下标σ的***两参数选择***方法，即左子结点为关系R，右结点为关系S每个元组上的条件表达式，两个参数可以是语法树，表达式树或两者的组合。    
 对于以上的两参数选择，可以进一步处理，即：  
@@ -48,7 +48,7 @@ WHERE m1.movieYear - 30 <= (
 );
 ```
 针对以上SQL语句，逻辑运算如下：
-![avatar](/asserts/execution_plan_sample3.jpeg);
+![avatar](/asserts/execution_plan_sample3.jpeg =200x);
 过程如下：
 - 首先是带有两参数的选择；
 - 然后是将选择上移，并将两参数选择用子结点替换；
