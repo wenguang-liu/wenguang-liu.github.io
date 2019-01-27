@@ -174,4 +174,8 @@ T(R JOIN S) = T(R)T(S)/max(V(R,Y),V(S,Y))
 本文主要介绍了不同的运算方式的代价估计，基于这些估计将选择正在的物理执行计划，介绍了计划的选择的方法。
 
 
-更多内容可以参考
+更多内容可以参考：   
+- [(db)数据库语句执行(1)-物理计划执行](https://wenguang-liu.github.io/2019/01/09/database-query-execution-1/)
+- [(db)数据库语句执行(2)-语法分析与预处理](https://wenguang-liu.github.io/2019/01/13/database-query-execution-2/)
+- [(db)数据库语句执行(3)-优化查询计划的代数定律](https://wenguang-liu.github.io/2019/01/15/database-query-execution-3/)
+- [(db)数据库语句执行(4)-逻辑查询计划](https://wenguang-liu.github.io/2019/01/15/database-query-execution-3/)
