@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      (db)数据库事务管理（2）
-subtitle:   串行化调度与锁模式
+title:      (db)数据库事务管理（4）
+subtitle:   乐观的并发控制
 date:       2019-02-25
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
