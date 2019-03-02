@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      (db)数据库事务管理（4）
+title:      (db)数据库事务管理(4)
 subtitle:   乐观的并发控制规则
 date:       2019-02-25
 author:     Wenguangliu
@@ -91,7 +91,7 @@ tags:
 1.2 FIN(U) > START(T)，事务T开始时，U未结束；
 1.3 RS(T) and WS(U) 不为空；
 以上将存在事务T在事务U开始，但是事务T可能读X在事务U写之前，存在事实上不可实现。即后开始的事务读到的值是旧值，此时需要将事务T进行回滚。
-2. 稼穑事务U，有：
+2. 假如事务U，有：
 2.1 U在VAL中，U已经完成有效性确认；
 2.2 FIN(U) > VAL(T), 事务T确认之前，事务U没有结束；
 2.3 WS(T) and WS(U)不为空，如X；

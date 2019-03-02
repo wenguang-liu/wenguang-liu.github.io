@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      (db)数据库事务管理（3）
+title:      (db)数据库事务管理(3)
 subtitle:   锁调度器与树形结构的锁策略
 date:       2019-02-21
 author:     Wenguangliu
