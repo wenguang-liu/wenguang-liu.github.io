@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      (db)数据库事务管理(5)
-subtitle:   死锁
+subtitle:   死锁检测与预防
 date:       2019-03-02
 author:     Wenguangliu
 header-img: img/post-bg-unix-linux.jpg
